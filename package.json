@@ -4,11 +4,12 @@
   "description": "",
   "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
     "postinstall": "tsc --skipLibCheck",
     "dev": "ts-node-dev --respawn --transpile-only --pretty src/index.ts",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,8 @@
     "@types/node": "^20.11.30",
     "@typescript-eslint/parser": "^7.3.1",
     "nodemon": "^2.0.22",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^5.0.5",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.2"
