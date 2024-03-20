@@ -1,18 +1,19 @@
 import cors from "cors";
 import Express  from "express";
-import { Request, Response } from "express";
 
 const app = Express();
 
 app.use(cors());
 
 
-app.get("/api/hello/", (req: Request, res: Response) => {
+app.get("/api/hello/", (req, res) => {
     res.json({
         message: "AA"
     });
 });
 
-app.listen(8000, () => {
-    console.log("Server running on port 8000");
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 })
