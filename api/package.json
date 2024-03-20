@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "postinstall": "tsc",
+    "postinstall": "tsc --skipLibCheck",
     "dev": "ts-node-dev --respawn --transpile-only --pretty src/index.ts",
     "start": "node dist/index.js"
   },
