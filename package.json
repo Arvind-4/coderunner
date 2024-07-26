@@ -1,25 +1,28 @@
 {
   "name": "coderunner",
   "version": "1.0.0",
-  "description": "",
+  "description": "A monorepo for a fullstack application",
   "scripts": {
-    "bootstrap": "pnpm install && pnpm bootstrap:ui && pnpm bootstrap:api",
-    "bootstrap:ui": "cd ui && pnpm install",
-    "bootstrap:api": "cd api && pnpm install",
-    "dev:api": "cd api && pnpm dev",
-    "dev:ui": "cd ui && pnpm dev",
+    "dev:apps": "pnpm run --parallel -r dev",
     "dev:prettier": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}} --no-error-on-unmatched-pattern",
-    "build:api": "cd api && pnpm build",
-    "build:ui": "cd ui && pnpm build",
-    "start:api": "cd api && pnpm start",
-    "start:ui": "cd ui && pnpm start",
-    "format": "prettier --write .",
+    "build": "pnpm run --parallel -r build",
     "dev": "npm-run-all --parallel dev:*",
-    "start": "npm-run-all --parallel start:*",
-    "build": "npm-run-all --parallel build:*"
+    "format": "prettier --write .",
+    "lint": "pnpm run --parallel -r lint"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "monorepo",
+    "fullstack",
+    "nextjs",
+    "express",
+    "typescript"
+  ],
+  "author": {
+    "name": "Arvind A",
+    "email": "pingarvindforquestions@gmail.com",
+    "url": "https://arvind11.vercel.app",
+    "github": "https://github.com/Arvind-4"
+  },
   "license": "MIT",
   "devDependencies": {
     "npm-run-all": "4.1.5",
