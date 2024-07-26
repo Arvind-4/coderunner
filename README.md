@@ -22,7 +22,7 @@ cd coderunner
 2. Install Requirements
 
 ```bash
-pnpm bootstrap
+pnpm install
 ```
 
 3. Run the dev servers for ui and api
