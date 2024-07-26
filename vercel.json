@@ -1,22 +1,22 @@
 {
-	"version": 2,
-	"builds": [
-	  {
-		"src": "api/src/index.ts",
-		"use": "@vercel/node"
-	  },
-	  {
-		"src": "ui/package.json",
-		"use": "@vercel/next"
-	  }
-	],
-	"routes": [
-	  {
-		"src": "/api/(.*)",
-		"dest": "api/src/index.ts"
-	  }
-	],
-	"env": {
-	  "NODE_ENV": "production"
-	}
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/api/src/index.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "apps/ui/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "apps/api/src/index.ts"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
   }
+}
